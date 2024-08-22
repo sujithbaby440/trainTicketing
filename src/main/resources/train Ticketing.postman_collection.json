@@ -1,0 +1,162 @@
+{
+	"info": {
+		"_postman_id": "da7b2086-3774-4825-ac39-cd313fb3899c",
+		"name": "train Ticketing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18684160"
+	},
+	"item": [
+		{
+			"name": "create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"firstName\": \"sujith\",\n\"lastName\": \"baby\",\n\"email\": \"sujithbaby@idontknowthis.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:10733/api/v1/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "10733",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Purchase Ticket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": 1,\n    \"firstName\": \"sujith\",\n    \"lastName\": \"baby\",\n    \"email\": \"sujithbaby@idontknowthis.com\",\n    \"fromLocation\": \"France\",\n    \"toLocation\": \"London\",\n    \"pricePaid\": 20,\n    \"section\": \"A\",\n    \"seatNumber\": \"A1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:10733/api/v1/train-ticket/purchase",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "10733",
+					"path": [
+						"api",
+						"v1",
+						"train-ticket",
+						"purchase"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update Ticket",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ticketNumber\": 1,\n    \"userId\": 1,\n    \"fromLocation\": \"France\",\n    \"toLocation\": \"London\",\n    \"pricePaid\": 20.0,\n    \"section\": \"A\",\n    \"seatNumber\": \"A1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:10733/api/v1/train-ticket/modify-seat/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "10733",
+					"path": [
+						"api",
+						"v1",
+						"train-ticket",
+						"modify-seat",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:10733/api/v1/users/user/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "10733",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View Ticket",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"firstName\": \"sujith\",\n\"lastName\": \"baby\",\n\"email\": \"sujithbaby@idontknowthis.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:10733/api/v1/train-ticket/receipt/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "10733",
+					"path": [
+						"api",
+						"v1",
+						"train-ticket",
+						"receipt",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
